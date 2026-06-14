@@ -41,7 +41,7 @@ Dₙ = (Δt/2)·Iₙ⊗Λ̄                temporary impact
    + (ϱΔt²/2)·Jₙ⊗Π              terminal-inventory penalty
 ```
 
-with `(Gₙ)_{kj} = G(t_k,t_j)·1_{k>j}`, `(LᵀL)_{ij} = n - max(i,j)`,
+with `(Gₙ)_{kj} = G(t_k,t_j)·1_{k>j}`, `(LᵀL)_{ij} = n - max(k,j)`,
 `Jₙ = 1ₙ1ₙᵀ`, and `Λ̄ = ½(Λ + Λᵀ)`.
 
 The transient impact uses the factorized propagator `G(t,s) = C·φ(t−s)·1_{t>s}`
@@ -67,7 +67,7 @@ pip install numpy matplotlib
 
 ```python
 import numpy as np
-from portfolio import Portfolio   # adjust to your module name
+from lib import Portfolio   # adjust to your module name
 
 # --- problem setup (Experiment 2: two assets, cross-impact, no signal) ---
 N, T, n = 2, 10, 200
